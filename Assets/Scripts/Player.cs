@@ -28,6 +28,8 @@ public class Player : MonoBehaviour
         climbing
     };
 
+	[SerializeField] private AudioSource jumpSoundEffect;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
+			jumpSoundEffect.Play();
            rb.velocity = new Vector2(rb.velocity.x, JumpForce);
         }
 

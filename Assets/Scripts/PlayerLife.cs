@@ -14,6 +14,8 @@ public class PlayerLife : MonoBehaviour
     
     [SerializeField] private Text lifeText;
     [SerializeField] private Text healthText;
+    [SerializeField] private AudioSource deathSoundEffect;
+    [SerializeField] private AudioSource damageSoundEffect;
     
     
     private void Start()
@@ -43,11 +45,13 @@ public class PlayerLife : MonoBehaviour
     
     private void Damaged()
     {
+        damageSoundEffect.Play();
         anim.SetTrigger("Hurt");
     }
     
     private void Die()
     {
+        deathSoundEffect.Play();
         anim.SetTrigger("Death");
         rb.bodyType = RigidbodyType2D.Static;
     }
