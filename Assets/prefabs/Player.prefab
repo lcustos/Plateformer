@@ -154,6 +154,7 @@ MonoBehaviour:
     m_Bits: 64
   Speed: 7
   JumpForce: 14
+  jumpSoundEffect: {fileID: 0}
 --- !u!95 &3620355766766473522
 Animator:
   serializedVersion: 5
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cherriesText: {fileID: 0}
   gemText: {fileID: 0}
+  collectionSoundEffect: {fileID: 0}
 --- !u!114 &3620355766766473527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,3 +204,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeText: {fileID: 0}
   healthText: {fileID: 0}
+  deathSoundEffect: {fileID: 0}
+  damageSoundEffect: {fileID: 0}

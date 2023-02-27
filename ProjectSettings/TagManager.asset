@@ -9,6 +9,7 @@ TagManager:
   - Gem
   - Trap
   - Lives
+  - enemy
   layers:
   - Default
   - TransparentFX
