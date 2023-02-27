@@ -6,17 +6,25 @@ public class WaypointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
     private int currentWaypointIndex = 0;
+    private SpriteRenderer sr;
     
     [SerializeField] private float speed = 2f;
-    
+
+    private void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     private void Update()
     {
         if (Vector2.Distance(transform.position, waypoints[currentWaypointIndex].transform.position) < 0.1f)
         {
             currentWaypointIndex++;
+            sr.flipX = !sr.flipX;
             if (currentWaypointIndex >= waypoints.Length)
             {
                 currentWaypointIndex = 0;
+                
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
