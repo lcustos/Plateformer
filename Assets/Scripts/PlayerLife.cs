@@ -41,7 +41,7 @@ public class PlayerLife : MonoBehaviour
                 lifeText.text = "Life: " + Life;
             }
         }
-		if (collision.gameObject.CompareTag("enemy"))
+		if (collision.gameObject.CompareTag("Eagle"))
         	{
             	Die();
         	}
