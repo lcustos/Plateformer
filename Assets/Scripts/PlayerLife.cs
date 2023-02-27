@@ -41,6 +41,10 @@ public class PlayerLife : MonoBehaviour
                 lifeText.text = "Life: " + Life;
             }
         }
+		if (collision.gameObject.CompareTag("enemy"))
+        	{
+            	Die();
+        	}
     }   
     
     private void Damaged()

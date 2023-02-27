@@ -9,6 +9,10 @@ TagManager:
   - Gem
   - Trap
   - Lives
+  - enemy
+  - bunny
+  - eagle
+  - Eagle
   layers:
   - Default
   - TransparentFX
