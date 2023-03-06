@@ -30366,13 +30366,15 @@ GameObject:
   - component: {fileID: 214719009}
   - component: {fileID: 214719008}
   - component: {fileID: 214719007}
+  - component: {fileID: 214719012}
+  - component: {fileID: 214719011}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UI0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &214719007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30458,6 +30460,123 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!82 &214719011
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214719006}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &214719012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214719006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 815cf3ca3876e544a9417e3f666f65d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeText: {fileID: 1586017420}
+  healthText: {fileID: 569584878}
+  cherriesText: {fileID: 1020154932}
+  gemText: {fileID: 596060285}
+  cherryCount: 0
+  gemCount: 0
+  life: 5
+  health: 3
+  healthMax: 3
 --- !u!4 &237884384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 181951106572539, guid: 40e025824104e454d85ddc0cbbbb33e8, type: 3}
@@ -39922,6 +40041,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 57683d1f13a01854db1866b78c184c9d, type: 3}
     - target: {fileID: 3620355766766473524, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 214719012}
+    - target: {fileID: 3620355766766473524, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
       propertyPath: gemText
       value: 
       objectReference: {fileID: 596060285}
@@ -39933,6 +40056,10 @@ PrefabInstance:
       propertyPath: collectionSoundEffect
       value: 
       objectReference: {fileID: 1102077633}
+    - target: {fileID: 3620355766766473527, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 214719012}
     - target: {fileID: 3620355766766473527, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
       propertyPath: lifeText
       value: 

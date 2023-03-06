@@ -6,67 +6,62 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-    private Rigidbody2D rb; 
-    private int Health = 3;
-    private int HealthMax = 3;
-    private int Life = 5;
-    private Animator anim;
+    private Rigidbody2D _rb;
+    public int health = 3;
+    private Animator _anim;
     
-    [SerializeField] private Text lifeText;
-    [SerializeField] private Text healthText;
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource damageSoundEffect;
-    
+	private UI ui;    
     
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        _rb = GetComponent<Rigidbody2D>();
+        _anim = GetComponent<Animator>();
+        ui = GameObject.Find("UI").GetComponent<UI>();
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
         {
-            if (Health > 1)
+            if (health > 1)
             {
-                Health--;
+                health--;
                 Damaged();
-                healthText.text = "Health: " + Health + "/" + HealthMax;
+                ui.health = health;
             }
             else
             {   
                 Die();
-                Life--;
-                lifeText.text = "Life: " + Life;
             }
         }
 		if (collision.gameObject.CompareTag("Eagle"))
-        	{
-            	Die();
-        	}
+        {
+            Die();
+        }
     }   
     
     private void Damaged()
     {
         damageSoundEffect.Play();
-        anim.SetTrigger("Hurt");
+        _anim.SetTrigger("Hurt");
     }
     
     private void Die()
     {
         deathSoundEffect.Play();
-        anim.SetTrigger("Death");
-        rb.bodyType = RigidbodyType2D.Static;
+        _anim.SetTrigger("Death");
+        _rb.bodyType = RigidbodyType2D.Static;
+ 		ui.RestartUI();
 
-       if (Life > 0)
-            {
-                SceneManager.LoadScene("MenuGameOver");
-            }
-            else
-            {
-                Invoke("RestartLevel", 2f);
-            }
+       if (ui.life > 0) {
+                 Invoke("RestartLevel", 2f); 
+       }
+        else
+        {
+               SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
 
     }
     
