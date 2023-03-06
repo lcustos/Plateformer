@@ -46,7 +46,8 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
-			jumpSoundEffect.Play();
+			//jumpSoundEffect.Play();
+            AudioManager.instance.PlaySFX("jump");
            rb.velocity = new Vector2(rb.velocity.x, JumpForce);
         }
 

@@ -58,13 +58,15 @@ public class PlayerLife : MonoBehaviour
     
     private void Damaged()
     {
-        damageSoundEffect.Play();
+        //damageSoundEffect.Play();
+        AudioManager.instance.PlaySFX("damage");
         _anim.SetTrigger("Hurt");
     }
     
     private void Die()
     {
-        deathSoundEffect.Play();
+        //deathSoundEffect.Play();
+        AudioManager.instance.PlaySFX("death");
         _anim.SetTrigger("Death");
         _rb.bodyType = RigidbodyType2D.Static;
  		ui.RestartUI();
