@@ -14,6 +14,11 @@ public class MainMenu : MonoBehaviour
        SceneManager.LoadScene(gameSceneName);
     }
 
+    public void Retry()
+        {
+           SceneManager.LoadScene(gameSceneName);
+        }
+
     // Fonction appelée lorsque le joueur clique sur le bouton "Quitter"
     public void QuitGame()
     {
