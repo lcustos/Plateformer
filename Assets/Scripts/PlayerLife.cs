@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,19 +8,25 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour
 {
     private Rigidbody2D rb; 
-    private int Health = 3;
-    private int HealthMax = 3;
-    private int Life = 5;
+    public int Health = 3;
+    public int HealthMax = 3;
+    public int Life = 5;
     private Animator anim;
     
     [SerializeField] private Text lifeText;
     [SerializeField] private Text healthText;
     [SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource damageSoundEffect;
-    
-    
+    public static PlayerLife instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Start()
     {
+        Health = HealthMax;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
