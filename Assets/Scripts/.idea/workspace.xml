@@ -7,10 +7,7 @@
     <list default="true" id="0d3044a8-1279-4a02-941f-a14cddd5f900" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlayerLife.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerLife.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Temp/__Backupscenes/0.backup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Temp/workerlic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
@@ -57,6 +54,9 @@
       <updated>1677486729734</updated>
       <workItem from="1677486731589" duration="3882000" />
       <workItem from="1677744577973" duration="1610000" />
+      <workItem from="1678094855307" duration="2550000" />
+      <workItem from="1678097552904" duration="5097000" />
+      <workItem from="1678103236807" duration="315000" />
     </task>
     <servers />
   </component>

@@ -11,9 +11,14 @@ public class itemCollector : MonoBehaviour
     
     [SerializeField] private Text cherriesText;
     [SerializeField] private Text gemText;
-
+	private UI ui;
 	[SerializeField] private AudioSource collectionSoundEffect;
     
+    
+    void Start()
+    {
+        ui = GameObject.Find("UI").GetComponent<UI>();
+    }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,14 +27,14 @@ public class itemCollector : MonoBehaviour
 			collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             cherryCount++;
-            cherriesText.text = "Cherries: " + cherryCount;
+            ui.cherryCount = cherryCount;
         }
         if (collision.gameObject.CompareTag("Gem"))
         {
 			collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             gemCount++;
-            gemText.text = "Gems: " + gemCount;
+            ui.gemCount = gemCount;
         }
     }
 }
