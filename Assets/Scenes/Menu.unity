@@ -1482,7 +1482,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8501706726075478906, guid: 4f8b710b40dea194ab535759e9eadeed, type: 3}
       propertyPath: m_UiScaleMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8501706726075478906, guid: 4f8b710b40dea194ab535759e9eadeed, type: 3}
       propertyPath: m_ReferenceResolution.x
