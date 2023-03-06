@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-<<<<<<< HEAD
 
     private Rigidbody2D _rb;
     public int health = 3;
@@ -16,28 +15,13 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private AudioSource damageSoundEffect;
 	private UI ui;    
     
-=======
-    private Rigidbody2D _rb;
-    public int health = 3;
-    private Animator _anim;
-
-[SerializeField] private AudioSource deathSoundEffect;
-    [SerializeField] private AudioSource damageSoundEffect;
-    private UI ui;
-
->>>>>>> f85e232515fce23557226dfe2c5257f6bc995bae
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         ui = GameObject.Find("UI").GetComponent<UI>();
-<<<<<<< HEAD
-	}
-    
-=======
-    }
 
->>>>>>> f85e232515fce23557226dfe2c5257f6bc995bae
+	}
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))
