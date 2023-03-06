@@ -41,6 +41,19 @@ public class PlayerLife : MonoBehaviour
         {
             Die();
         }
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+            if (health > 1)
+            {
+                health--;
+                Damaged();
+                ui.health = health;
+            }
+            else
+            {   
+                Die();
+            }
+        }
     }   
     
     private void Damaged()

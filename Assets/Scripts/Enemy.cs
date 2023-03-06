@@ -7,8 +7,8 @@
 //{
 //
 //    [Header("Stats")]
-//    [SerializeField] float health ;
-//    private float LastPlayerDetectTime; ;
+//    [SerializeField] float speed ;
+//    private float LastPlayerDetectTime;
 //    public float playerDetectRate = 0.2f;
 //    public float chaseRange;
 //    bool lookRight;
@@ -64,38 +64,45 @@
 //        if (targetPlayer != null)
 //        {
 //            float distance = Vector2.Distance(transform.position, targetPlayer.transform.position);
-//                    if(distance < attackRange && Time.time - lastAttackTime >= attackRate)
-//                    {
-//                        rb.velocity = Vector2.zero;
-//                    }
-//                    else if (distance > attackRange)
-//                    {
-//                        if (path == null)
-//                            return;
-//                        if (currentWaypoint >= path.vectorPath.Count)
-//                        {
-//                            reachedEndOfPath = true;
-//                        }
-//                        else
-//                        {
-//                            reachedEndOfPath = false;
-//                        }
-//                        Vector2 direction = ((Vector2))path.vectorPath[currentWaypoint] - rb.position).normalized;
-//                        Vector2 force = direction * speed * Time.fixedDeltaTime;
+//            
+//			if(distance < attackRange && Time.time - lastAttackTime >= attackRate)
+//            {
 //
-//                        rb.velocity = force;
+//				lastAttackTime = Time.time;
+//				anim.SetTrigger("Attack");
 //
-//                        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+//                rb.velocity = Vector2.zero;
 //
-//                        if (distance < nextWaypointDistance)
-//                        {
-//                            currentWaypoint++;
-//                        }
-//                    }
-//                    else
-//                    {
-//                        rb.velocity = Vector2.zero;
-//                    }
+//				Debug.Log("J'attaque");
+//            }
+//            else if (distance > attackRange)
+//            {
+//                if (path == null)
+//                    return;
+//                if (currentWaypoint >= path.vectorPath.Count)
+//                {
+//                    reachedEndOfPath = true;
+//                }
+//                else
+//                {
+//                    reachedEndOfPath = false;
+//                }
+//                Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+//                Vector2 force = direction * speed * Time.fixedDeltaTime;
+//
+//                rb.velocity = force;
+//
+//                float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+//
+//                if (distance < nextWaypointDistance)
+//                {
+//                    currentWaypoint++;
+//                }
+//            }
+//            else
+//            {
+//                rb.velocity = Vector2.zero;
+//            }
 //        }
 //        DetectPlayer();
 //    }
@@ -117,77 +124,36 @@
 //                        if (distance > chaseRange)
 //                        {
 //                            targetPlayer = null;
+//							rb.velocity = Vector2.zero;
+//							anim.SetBool("onMove", false);
 //                        }
 //                    }
 //                    else if (distance < chaseRange)
 //                    {
 //                        if (targetPlayer == null)
-//                        {
-//                            targetPlayer = player;
-//                        }
+//                        	targetPlayer = player;
+//							anim.SetBool("onMove", true);    
 //                    }
 //                }
 //            }
+//		}
 //    }
 //
 //
 //    // Update is called once per frame
-//        void Update()
-//        {
-//            if(rb.velocity.x >= 0 && lookRight || rb.velocity.x <= 0 && !lookRight)
-//            {
-//                Flip();
-//            }
-//
-//        }
-//
-//    void FixedUpdate()
+//    void Update()
 //    {
-//        if (targetPlayer != null)
+//        if(rb.velocity.x >= 0 && lookRight || rb.velocity.x <= 0 && !lookRight)
 //        {
-//            float distance = Vector2.Distance(transform.position, targetPlayer.transform.position);
-//            if ( distance < attackRange && Time.time - lastAttackTime >= attackRate)
-//            {
-//                lastAttackTime = Time.time;
-//                anim.SetTrigger("Attack");
-//                rb.velocity = Vector2.zero;
-//                Debug.Log("]'attack");
-//            }
-//            else if (distance > attackRange)
-//            {
-//                if (path == null)
-//                    return;
-//                if (currentWaypoint >= path.vectorPath.Count)
-//                {
-//                    reachedEndOfPath = true;
-//                    return;
-//                }
-//                else
-//                {
-//                    reachedEndOfPath = false;
-//                }
-//                Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-//                Vector2 force = direction * speed * Time.deltaTime;
-//                rb.AddForce(force);
-//                float distanceToWaypoint = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-//                if (distanceToWaypoint < nextWaypointDistance)
-//                {
-//                    currentWaypoint++;
-//                }
-//            }
+//            Flip();
 //        }
-//        else
-//        {
-//            DetectPlayer();
-//        }
+//
 //    }
 //
-//
-//    void Flip()
+//    private void Flip()
 //    {
 //        lookRight = !lookRight;
-//
-//
 //        transform.Rotate(0f, 180f, 0f);
 //    }
+//
 //}
