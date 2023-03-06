@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Nom de la scène de jeu
-    public string gameSceneName = "Level1";
+    [SerializeField] private UI ui;
 
-    // Fonction appelée lorsque le joueur clique sur le bouton "Nouvelle partie"
+    public void Start()
+    {
+        ui = GameObject.Find("UI").GetComponent<UI>();
+    }
+
     public void StartNewGame()
     {
-       SceneManager.LoadScene(gameSceneName);
+       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Retry()
         {
-           SceneManager.LoadScene(gameSceneName);
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+           ui.life = 5;
         }
 
     // Fonction appelée lorsque le joueur clique sur le bouton "Quitter"
