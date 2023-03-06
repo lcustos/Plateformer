@@ -7,44 +7,21 @@ using UnityEngine.UI;
 
 public class PlayerLife : MonoBehaviour
 {
-<<<<<<< HEAD
     private Rigidbody2D _rb;
     public int health = 3;
     private Animator _anim;
-=======
-    private Rigidbody2D rb; 
-    public int Health = 3;
-    public int HealthMax = 3;
-    public int Life = 5;
-    private Animator anim;
->>>>>>> d987f5822275dc1a42566d75266d91634b743315
-    
-    [SerializeField] private AudioSource deathSoundEffect;
+
+[SerializeField] private AudioSource deathSoundEffect;
     [SerializeField] private AudioSource damageSoundEffect;
-<<<<<<< HEAD
-	private UI ui;    
-    
+    private UI ui;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _anim = GetComponent<Animator>();
         ui = GameObject.Find("UI").GetComponent<UI>();
-=======
-    public static PlayerLife instance;
-
-    private void Awake()
-    {
-        instance = this;
     }
 
-    private void Start()
-    {
-        Health = HealthMax;
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
->>>>>>> d987f5822275dc1a42566d75266d91634b743315
-    }
-    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Trap"))

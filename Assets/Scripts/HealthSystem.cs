@@ -7,16 +7,17 @@ public class HealthSystem : MonoBehaviour
 {
     public Sprite redbull, redbullEmpty;
     public Image life1, life2, life3;
+    private UI ui;
     
     void Start()
     {
-        
+        ui = GameObject.Find("UI").GetComponent<UI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (PlayerLife.instance.Health)
+        switch (ui.health)
         {
             case 0:
                 life1.sprite = redbullEmpty;
