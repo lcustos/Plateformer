@@ -58,6 +58,16 @@ public class PlayerLife : MonoBehaviour
         deathSoundEffect.Play();
         anim.SetTrigger("Death");
         rb.bodyType = RigidbodyType2D.Static;
+
+       if (Life > 0)
+            {
+                SceneManager.LoadScene("MenuGameOver");
+            }
+            else
+            {
+                Invoke("RestartLevel", 2f);
+            }
+
     }
     
     private void RestartLevel()
