@@ -24,14 +24,16 @@ public class itemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cherry"))
         {
-			collectionSoundEffect.Play();
+			//collectionSoundEffect.Play();
+            AudioManager.instance.PlaySFX("collect");
             Destroy(collision.gameObject);
             cherryCount++;
             ui.cherryCount = cherryCount;
         }
         if (collision.gameObject.CompareTag("Gem"))
         {
-			collectionSoundEffect.Play();
+			//collectionSoundEffect.Play();
+            AudioManager.instance.PlaySFX("collect");
             Destroy(collision.gameObject);
             gemCount++;
             ui.gemCount = gemCount;
