@@ -14,4 +14,27 @@ public class SettingsMenu : MonoBehaviour
     {
         settingsMenu.SetActive(false); // désactiver l'affichage du menu de paramètres
     }
+    // faire démarrer le jeu sans la pause
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+    }
+    // press anykey to hide settings menu
+    void Update()
+    {
+        if (Input.anyKey)
+        {
+            HideSettingsMenu();
+        }
+    }
+    // when the settings menu is open the game is paused
+    void OnEnable()
+    {
+        Time.timeScale = 0;
+    }
+    // when the settings menu is closed the game is unpaused
+    private void OnDisable()
+         {
+             Time.timeScale = 1;
+         }
 }

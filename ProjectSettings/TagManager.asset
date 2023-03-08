@@ -21,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - SoundController
   - 
   - 
   - 
@@ -58,4 +58,7 @@ TagManager:
     locked: 0
   - name: Entities
     uniqueID: 3460244445
+    locked: 0
+  - name: Sound
+    uniqueID: 3315892795
     locked: 0
