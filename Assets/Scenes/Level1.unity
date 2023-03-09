@@ -107114,6 +107114,10 @@ PrefabInstance:
       propertyPath: damageSoundEffect
       value: 
       objectReference: {fileID: 1410437426}
+    - target: {fileID: 3620355766766473532, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3620355766766473534, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
       propertyPath: jumpSoundEffect
       value: 
@@ -107132,11 +107136,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3620355766766473535, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.6
+      value: 109.3
       objectReference: {fileID: 0}
     - target: {fileID: 3620355766766473535, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 3620355766766473535, guid: bb833452487738445ba4bdef711d1f3e, type: 3}
       propertyPath: m_LocalPosition.z

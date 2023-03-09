@@ -1,19 +1,18 @@
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public Transform player; // référence au joueur
-    public float speed = 2f; // vitesse de l'ennemi
-    public float attackRange = 1f; // portée d'attaque de l'ennemi
-    public int attackDamage = 10; // dégâts infligés à chaque attaque
+    public float speed = 3f;
+    public float attackRange = 1f;
 
-    private Animator animator; // référence à l'animator de l'ennemi
-    private CircleCollider2D attackCollider; // référence au collider d'attaque
+    private Transform player;
+    private Animator animator;
+    private bool facingRight = true;
 
     private void Start()
     {
         animator = GetComponent<Animator>(); // récupérer l'animator de l'ennemi
-        attackCollider = GetComponent<CircleCollider2D>(); // récupérer le collider d'attaque
+        player = GameObject.FindGameObjectWithTag("Player").transform; // récupérer la position du joueur
     }
 
     private void Update()
@@ -22,33 +21,47 @@ public class EnemyController : MonoBehaviour
         float distance = Vector3.Distance(transform.position, player.position);
         Vector3 direction = (player.position - transform.position).normalized;
 
-        // Faire avancer l'ennemi vers le joueur
-        transform.Translate(direction * speed * Time.deltaTime);
-
         // Si l'ennemi est suffisamment proche, attaquer le joueur
         if (distance < attackRange)
         {
-            Attack();
+            animator.SetTrigger("BossAttack");
+
+            // Ajouter ici le code pour infliger des dégâts au joueur
+            Debug.Log("L'ennemi inflige des dégâts !");
         }
+        else
+        {
+                    animator.ResetTrigger("BossAttack");
+                    animator.SetBool("BossIdle", false);
+                    animator.SetBool("BossWalk", true);
+
+                    if (direction.x > 0 && !facingRight)
+                    {
+                        Flip();
+                    }
+                    else if (direction.x < 0 && facingRight)
+                    {
+                        Flip();
+                    }
+
+                    transform.Translate(direction.x * speed * Time.deltaTime * Vector3.right);
+                }
     }
 
-    private void Attack()
+    private void Flip()
     {
-        Debug.Log("L'ennemi attaque !");
-        animator.SetBool("Attack", true); // déclencher l'animation d'attaque
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 
-        // Trouver tous les colliders dans la portée d'attaque
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, attackCollider.radius);
-
-        // Parcourir les colliders touchés
-        foreach (Collider2D hitCollider in hitColliders)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // Si le joueur entre dans la zone de détection de l'ennemi, le suivre
+        if (other.gameObject.CompareTag("Player"))
         {
-            // Si le collider correspond au joueur, appliquer des dégâts
-            if (hitCollider.gameObject.CompareTag("Player"))
-            {
-                // Ajouter ici le code pour infliger des dégâts au joueur
-                Debug.Log("L'ennemi inflige des dégâts !");
-            }
+            Debug.Log("Le joueur a été détecté !");
         }
     }
 }

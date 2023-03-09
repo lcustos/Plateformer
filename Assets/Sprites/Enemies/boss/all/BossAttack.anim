@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BossIdle
+  m_Name: BossAttack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 98076ffcf347087469c3efd99de846a7, type: 3}
+      value: {fileID: 21300000, guid: 1af191d876ab05c4c83f7f2af206e09f, type: 3}
     - time: 0.16666667
-      value: {fileID: 21300000, guid: a1cc5161ae668e5488fa0fba00479ed7, type: 3}
+      value: {fileID: 21300000, guid: b0f08c63ce5712047abd03984ed2b714, type: 3}
     - time: 0.33333334
-      value: {fileID: 21300000, guid: 390bea998baf61043bbc59e4cbf347d2, type: 3}
+      value: {fileID: 21300000, guid: 0a9fc1f28c6e4cd4f85653666f7c4d25, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: c6509e4578791474da0020e06aad3112, type: 3}
+      value: {fileID: 21300000, guid: 53dbcbb97b49bff45a608069796a0662, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 98076ffcf347087469c3efd99de846a7, type: 3}
-    - {fileID: 21300000, guid: a1cc5161ae668e5488fa0fba00479ed7, type: 3}
-    - {fileID: 21300000, guid: 390bea998baf61043bbc59e4cbf347d2, type: 3}
-    - {fileID: 21300000, guid: c6509e4578791474da0020e06aad3112, type: 3}
+    - {fileID: 21300000, guid: 1af191d876ab05c4c83f7f2af206e09f, type: 3}
+    - {fileID: 21300000, guid: b0f08c63ce5712047abd03984ed2b714, type: 3}
+    - {fileID: 21300000, guid: 0a9fc1f28c6e4cd4f85653666f7c4d25, type: 3}
+    - {fileID: 21300000, guid: 53dbcbb97b49bff45a608069796a0662, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
