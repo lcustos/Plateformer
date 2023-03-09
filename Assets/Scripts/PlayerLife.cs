@@ -31,6 +31,8 @@ public class PlayerLife : MonoBehaviour
                 health--;
                 Damaged();
                 ui.health = health;
+				print("health: " + health);
+				print("UI health: " + ui.health);
             }
             else
             {   
@@ -76,7 +78,7 @@ public class PlayerLife : MonoBehaviour
        }
         else
         {
-               SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+               SceneManager.LoadScene("MenuGameOver");
         }
 
     }

@@ -6,9 +6,8 @@ using UnityEngine.SceneManagement;
 public class Finish : MonoBehaviour
 {
     private AudioSource finishSound;
-
+	private UI ui;    
     private bool levelCompleted = false;
-
     private void Start()
     {
         finishSound = GetComponent<AudioSource>();
@@ -27,5 +26,6 @@ public class Finish : MonoBehaviour
     private void CompleteLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		ui.health = 3;
     }
 }

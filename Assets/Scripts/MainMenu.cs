@@ -15,12 +15,12 @@ public class MainMenu : MonoBehaviour
 
     public void StartNewGame()
     {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+       SceneManager.LoadScene("Level0");
     }
 
     public void Retry()
         {
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+           SceneManager.LoadScene("Level0");
            ui.life = 5;
         }
 
