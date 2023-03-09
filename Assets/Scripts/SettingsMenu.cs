@@ -19,7 +19,7 @@ public class SettingsMenu : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-    // press anykey to hide settings menu
+    // press any keybord key to hide settings menu
     void Update()
     {
         if (Input.anyKey)
@@ -30,7 +30,10 @@ public class SettingsMenu : MonoBehaviour
     // when the settings menu is open the game is paused
     void OnEnable()
     {
-        Time.timeScale = 0;
+        if (settingsMenu.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
     }
     // when the settings menu is closed the game is unpaused
     private void OnDisable()
