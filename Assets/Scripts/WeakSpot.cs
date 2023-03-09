@@ -8,6 +8,7 @@ public class WeakSpot : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(objectToDestroy);
+            print("touch");
         }
     }
 }
