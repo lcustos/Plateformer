@@ -87,4 +87,19 @@ public class PlayerLife : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+	public void TakeDamage(int damage)
+    {
+        if (health > damage)
+        {
+            health -= damage;
+            Damaged();
+            ui.health = health;
+        }
+        else
+        {
+            Die();
+        }
+    }
+
 }
