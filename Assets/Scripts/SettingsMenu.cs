@@ -21,12 +21,12 @@ public class SettingsMenu : MonoBehaviour
     }
     // press any keybord key to hide settings menu
     void Update()
-    {
-        if (Input.anyKey)
-        {
-            HideSettingsMenu();
-        }
-    }
+     {
+         if (Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+         {
+             HideSettingsMenu();
+         }
+     }
     // when the settings menu is open the game is paused
     void OnEnable()
     {
