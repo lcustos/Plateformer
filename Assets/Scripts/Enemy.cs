@@ -107,4 +107,21 @@ public class Enemy : MonoBehaviour
         // Call the TakeDamage method from the PlayerLife script to apply damage
         player.GetComponent<PlayerLife>().TakeDamage(damage);
     }
+	private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Check if the player is above the boss
+            if (collision.transform.position.y > transform.position.y + GetComponent<Collider2D>().bounds.extents.y)
+            {
+                // The player jumped on the weakpoint, so don't deal damage.
+            }
+            else
+            {
+                // The player didn't jump on the weakpoint, so deal damage.
+                collision.gameObject.GetComponent<PlayerLife>().TakeDamage(damage);
+            }
+        }
+    }
+
 }
