@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour
     private bool facingRight = true;
     private bool inAggroRange = false;
     private float lastAttackTime;
+    
+    public int maxHits = 3;
+    private int currentHits = 0;
+    private bool isDead = false;
 
     private void Start()
     {
@@ -21,7 +25,9 @@ public class Enemy : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
+        if (isDead) return;
+        
         float distance = Vector3.Distance(transform.position, player.position);
         Vector3 direction = (player.position - transform.position).normalized;
     
@@ -66,7 +72,26 @@ public class Enemy : MonoBehaviour
             animator.SetBool("BossWalk", false);
         }
     }
+    public void TakeHit()
+    {
+        if (!isDead)
+        {
+            currentHits++;
 
+            if (currentHits >= maxHits)
+            {
+                Die();
+            }
+        }
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        animator.SetBool("IsDead", true);
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+    }
 
     private void Flip()
     {
